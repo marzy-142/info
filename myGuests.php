@@ -18,128 +18,103 @@ $dataResult = fetchGuests($conn);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guest List</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        
-        .navbar {
-            background-color: #007bff;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .logo {
-            font-size: 26px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        
-        .menu a {
-            color: white;
-            margin: 0 20px;
-            text-decoration: none;
-            font-size: 18px;
-            text-transform: capitalize;
-            transition: color 0.3s ease;
-        }
-        
-        .menu a:hover {
-            color: #ffc107;
-        }
-        
-        h1 {
-            text-align: center;
-            margin-top: 40px;
-            color: #007bff;
-            font-size: 36px;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
+       /* General Styles */
+body {
+    font-family: 'Quicksand', sans-serif; /* A modern and clean font */
+    background-color: #f8f1ff; /* Light powdery background */
+    margin: 0;
+    padding-top: 70px; /* Prevents content from hiding behind navbar */
+}
 
-        .table-container {
-            max-width: 90%;
-            margin: 30px auto;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            padding: 20px;
-        }
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #d2b8f2; /* Powdery lavender */
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+/* Navbar Buttons */
+.navbar button {
+    background-color: #e9d7ff; /* Soft button color */
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
 
-        table th, table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #f1f1f1;
-        }
+.navbar button:hover {
+    background-color: #c5a6e3;
+}
 
-        table th {
-            background-color: #007bff;
-            color: white;
-            font-weight: bold;
-        }
+/* Guest List Styles */
+.table-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-        table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
 
-        table tr:hover {
-            background-color: #f1f1f1;
-            cursor: pointer;
-        }
+th, td {
+    padding: 12px;
+    text-align: left;
+}
 
-        .actions a {
-            color: #28a745;
-            text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            background-color: #d4edda;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+th {
+    background-color: #e9d7ff;
+    color: #5c3c92;
+    font-weight: bold;
+}
 
-        .actions a:hover {
-            background-color: #218838;
-            color: white;
-        }
+td {
+    border-bottom: 1px solid #ddd;
+}
 
-        .delete-link {
-            color: #dc3545;
-            text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            background-color: #f8d7da;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+/* Buttons */
+button.edit, button.delete {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
-        .delete-link:hover {
-            background-color: #c82333;
-            color: white;
-        }
+button.edit {
+    background-color: #b28dff;
+    color: white;
+}
 
-        .rounded-circle {
-            border-radius: 50%;
-        }
+button.delete {
+    background-color: #ff9aa2;
+    color: white;
+}
 
-        .table-responsive {
-            max-width: 100%;
-            overflow-x: auto;
-        }
+button.edit:hover {
+    background-color: #9a74e8;
+}
 
-        .no-data {
-            text-align: center;
-            color: #777;
-            font-size: 18px;
-        }
+button.delete:hover {
+    background-color: #ff7b8b;
+}
 
     </style>
 </head>
@@ -154,7 +129,7 @@ $dataResult = fetchGuests($conn);
         </div>
     </div>
 
-    <h1>Guest List</h1>
+    <h1 style="text-align: center;">Guest List</h1>
 
     <div class="table-container">
         <div class="table-responsive">

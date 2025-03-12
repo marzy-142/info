@@ -67,117 +67,108 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($id)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Guest</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        
-        .navbar {
-            background-color: #007bff;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .logo {
-            font-size: 26px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        
-        .menu a {
-            color: white;
-            margin: 0 20px;
-            text-decoration: none;
-            font-size: 18px;
-            text-transform: capitalize;
-            transition: color 0.3s ease;
-        }
-        
-        .menu a:hover {
-            color: #ffc107;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
+       /* General Styles */
+body {
+    font-family: 'Quicksand', sans-serif; /* A modern and clean font */
+    background-color: #f8f1ff; /* Light powdery background */
+    margin: 0;
+    padding-top: 70px; /* Prevents content from hiding behind navbar */
+}
 
-        h1 {
-            text-align: center;
-            margin-top: 40px;
-            color: #007bff;
-            font-size: 36px;
-        }
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #d2b8f2; /* Powdery lavender */
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 30px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-top: 40px;
-        }
+/* Navbar Buttons */
+.navbar button {
+    background-color: #e9d7ff; /* Soft button color */
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
 
-        form {
-            display: flex;
-            flex-direction: column;
-        }
+.navbar button:hover {
+    background-color: #c5a6e3;
+}
+      /* Container Styles */
+.container {
+    width: 50%;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
 
-        label {
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
+.form-group {
+    margin-bottom: 15px;
+}
 
-        input[type="text"],
-        input[type="email"],
-        input[type="file"],
-        button {
-            padding: 12px;
-            font-size: 16px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            margin-bottom: 15px;
-            width: 100%;
-        }
+label {
+    font-weight: 600;
+    color: #6a5acd;
+    display: block;
+    margin-bottom: 5px;
+}
 
-        button {
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            border: none;
-        }
+input[type="text"],
+input[type="email"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
 
-        button:hover {
-            background-color: #0056b3;
-        }
+button {
+    background-color: #6a5acd;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
 
-        input[type="file"] {
-            padding: 10px;
-        }
+button:hover {
+    background-color: #5a4db8;
+}
 
-        a {
-            text-decoration: none;
-            color: #007bff;
-            text-align: center;
-            display: block;
-            margin-top: 15px;
-        }
+a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #6a5acd;
+    font-weight: bold;
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
+a:hover {
+    text-decoration: underline;
+}
 
-        .error {
-            color: red;
-            font-size: 14px;
-        }
     </style>
 </head>
 
@@ -191,7 +182,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($id)) {
         </div>
     </div>
 
-    <h1>Update Guest Information</h1>
+    <h1 style="text-align: center;">Update Guest Information</h1>
 
     <div class="container">
         <form method="post" enctype="multipart/form-data">
