@@ -68,21 +68,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($id)) {
     <title>Update Guest</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
-       /* General Styles */
+  
 body {
-    font-family: 'Quicksand', sans-serif; /* A modern and clean font */
-    background-color: #f8f1ff; /* Light powdery background */
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f8f1ff;
     margin: 0;
-    padding-top: 70px; /* Prevents content from hiding behind navbar */
+    padding-top: 70px; 
 }
 
-/* Navbar Styles */
+
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #d2b8f2; /* Powdery lavender */
+    background-color: #d2b8f2;
     padding: 15px 20px;
     display: flex;
     align-items: center;
@@ -91,9 +91,9 @@ body {
     z-index: 1000;
 }
 
-/* Navbar Buttons */
+
 .navbar button {
-    background-color: #e9d7ff; /* Soft button color */
+    background-color: #e9d7ff;
     border: none;
     padding: 8px 15px;
     border-radius: 20px;
@@ -105,7 +105,7 @@ body {
 .navbar button:hover {
     background-color: #c5a6e3;
 }
-      /* Container Styles */
+
 .container {
     width: 50%;
     margin: 20px auto;
